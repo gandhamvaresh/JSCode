@@ -23,4 +23,19 @@ Example
  
 
 The hiker first enters a valley  units deep. Then they climb out and up onto a mountain  units high. Finally, the hiker returns to sea level and ends the hike.
+Sample Input
+
+8
+UDDDUDUU
+Sample Output
+
+1
+Explanation
+
+If we represent _ as sea level, a step up as /, and a step down as \, the hike can be drawn as:
+
+_/\      _
+   \    /
+    \/\/
+The hiker enters and leaves one valley.
 */
