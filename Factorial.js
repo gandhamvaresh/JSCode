@@ -13,4 +13,5 @@ let fact_arr = range(10)
 //Factorial count is 
 let factorial_count= fact_arr.reduce((x,y)=>x*y);
 
-console.log(factorial_count)
+console.log(factorial_count);  
+//factorial_count is 3628800
