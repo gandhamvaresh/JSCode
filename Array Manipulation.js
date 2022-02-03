@@ -39,3 +39,39 @@ function addNumBW(s,e, v){
         arr[i]=parseInt(arr[i]+v);
     }
 }
+// ------------------------------Opimised version------------------------------------------------------
+
+
+
+var date1 = new Date();
+queries = [[1 ,5 ,3],[4 ,8, 7],[6 ,9 ,1],[31 ,35 ,63],[24 ,38, 7],[6 ,39 ,11]]
+function arrayManipulationOptimzied(n, queries) {
+
+    const arr = Array(n + 1);
+    let maxValue = 0,
+    currentNumber = 0;
+    queries.forEach(([startRange, endRange, value]) => {
+         arr[startRange] = arr[startRange] || { start: 0, end: 0 };
+         arr[endRange] = arr[endRange] || { start: 0, end: 0 };
+         arr[startRange].start += value;
+         arr[endRange].end += value;
+     });
+    arr.forEach((cell) => {
+       if (cell) {
+         currentNumber += cell.start;
+         if (currentNumber > maxValue) {
+            maxValue = currentNumber;
+         }
+         currentNumber -= cell.end;
+     }
+   });
+ return maxValue;
+}
+arrayManipulationOptimzied(50,queries)
+var date2 = new Date();
+var diff = date2 - date1; 
+console.log('diff',diff);
+
+
+
+
